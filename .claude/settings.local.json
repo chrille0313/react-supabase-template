@@ -18,7 +18,8 @@
       "Bash(for f:*)",
       "Bash(do echo:*)",
       "Read(//d/Github/ai-website-template/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "WebFetch(domain:docs.github.com)"
     ]
   }
 }
