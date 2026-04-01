@@ -162,9 +162,10 @@ import { Dialog } from "@workspace/ui/components/dialog";
 [Conventional commits](https://www.conventionalcommits.org/) enforced by commitlint + husky. See the [cheat sheet](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13) for all types.
 
 ```
-feat: add user profile page
+feat(auth): add password reset flow
 fix: resolve login redirect loop
-chore: update dependencies
+chore(deps): update dependencies
+refactor: extract session hooks
 ```
 
 ## Supabase
