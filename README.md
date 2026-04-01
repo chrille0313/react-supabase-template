@@ -28,7 +28,7 @@ A production-ready monorepo template for building web applications with React, V
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) >= 20
+- [Node.js](https://nodejs.org/) >= 24 (LTS)
 - [pnpm](https://pnpm.io/) >= 10
 - [Docker](https://www.docker.com/) (for local Supabase)
 
