@@ -13,7 +13,8 @@
     "db:start": "supabase start",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
-    "db:gen-types": "supabase gen types typescript --local > apps/web/src/integrations/supabase/types.gen.ts"
+    "db:gen-types": "supabase gen types typescript --local > apps/web/src/integrations/supabase/types.gen.ts",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=20",
@@ -21,7 +22,10 @@
   },
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "turbo": "^2.9.3"
