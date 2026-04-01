@@ -1,6 +1,9 @@
 {
   "permissions": {
     "allow": [
+      "Read",
+      "Write",
+      "Edit",
       "WebSearch",
       "WebFetch(domain:react.dev)",
       "WebFetch(domain:typescriptlang.org)",
