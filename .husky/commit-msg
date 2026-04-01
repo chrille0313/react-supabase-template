@@ -1,1 +1,6 @@
-npx --no-install commitlint --edit "$1"
+#!/usr/bin/env sh
+if command -v npx.cmd > /dev/null 2>&1 && ! grep -qi microsoft /proc/version 2>/dev/null; then
+  npx.cmd --no -- commitlint --edit "$1"
+else
+  npx --no -- commitlint --edit "$1"
+fi
