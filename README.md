@@ -29,7 +29,13 @@ A production-ready monorepo template for building web applications with React, V
 
 1. Click **"Use this template"** on GitHub to create a new repository
 2. Clone your new repository
-3. Install dependencies:
+3. Run the setup script to rename the project (uses directory name by default):
+   ```bash
+   bash scripts/setup.sh
+   # or with a custom name:
+   bash scripts/setup.sh my-project-name
+   ```
+4. Install dependencies:
    ```bash
    pnpm install
    ```
