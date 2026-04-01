@@ -4,26 +4,24 @@ A production-ready monorepo template for building web applications with React, V
 
 ## Stack
 
-- **React 19** + **TypeScript 6** (strict mode)
-- **Vite 8** — build tooling with HMR
-- **TanStack Router** — type-safe file-based routing with auto code splitting
-- **TanStack Query** — server state management and caching
-- **TanStack Form** — type-safe forms with Zod validation
-- **shadcn/ui** — accessible UI components built on Radix UI + Tailwind CSS v4
-- **Supabase** — auth, database, edge functions
-- **Zod 4** — schema validation
-- **T3 Env** — type-safe environment variables (strict mode)
-- **Turborepo** — monorepo task orchestration with caching
-- **ESLint** + **Prettier** — linting and formatting
-- **Commitlint** + **Husky** — conventional commit messages
-- **pnpm 10** — package manager
+- [**React 19**](https://react.dev/) + [**TypeScript 6**](https://www.typescriptlang.org/) (strict mode)
+- [**Vite 8**](https://vite.dev/) — build tooling with HMR
+- [**TanStack Router**](https://tanstack.com/router) — type-safe file-based routing with auto code splitting
+- [**TanStack Query**](https://tanstack.com/query) — server state management and caching
+- [**TanStack Form**](https://tanstack.com/form) — type-safe forms with Zod validation
+- [**shadcn/ui**](https://ui.shadcn.com/) — accessible UI components built on Radix UI + Tailwind CSS v4
+- [**Supabase**](https://supabase.com/) — auth, database, edge functions
+- [**Zod 4**](https://zod.dev/) — schema validation
+- [**T3 Env**](https://env.t3.gg/) — type-safe environment variables (strict mode)
+- [**Turborepo**](https://turbo.build/) — monorepo task orchestration with caching
+- [**ESLint**](https://eslint.org/) + [**Prettier**](https://prettier.io/) — linting and formatting
+- [**Commitlint**](https://commitlint.js.org/) + [**Husky**](https://typicode.github.io/husky/) — conventional commit messages
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) >= 20
 - [pnpm](https://pnpm.io/) >= 10
 - [Docker](https://www.docker.com/) (for local Supabase)
-- [Supabase CLI](https://supabase.com/docs/guides/cli) (installed via pnpm)
 
 ## Quick Start
 
@@ -39,15 +37,15 @@ A production-ready monorepo template for building web applications with React, V
    ```bash
    pnpm install
    ```
-4. Start local Supabase (requires Docker):
+5. Start local Supabase (requires Docker):
    ```bash
    pnpm db:start
    ```
-5. Generate TypeScript types from the database schema:
+6. Generate TypeScript types from the database schema:
    ```bash
    pnpm db:gen-types
    ```
-6. Start the development server:
+7. Start the development server:
    ```bash
    pnpm dev
    ```
@@ -57,59 +55,49 @@ The app runs at `http://localhost:8080` by default (configurable in `apps/web/.e
 ## Project Structure
 
 ```
+├── .github/                        # CI/CD workflows
 ├── apps/
-│   └── web/                        # Main React application
-│       ├── src/
-│       │   ├── auth/               # Auth domain (vertical slice)
-│       │   │   ├── components/     # Login, signup forms
-│       │   │   ├── queries.ts      # TanStack Query queries
-│       │   │   ├── mutations.ts    # Supabase mutations
-│       │   │   ├── hooks.ts        # useUser, useSignIn, etc.
-│       │   │   └── schemas.ts      # Zod validation schemas
-│       │   ├── integrations/       # Third-party service wiring
-│       │   │   ├── supabase/       # Supabase client + generated types
-│       │   │   ├── tanstack-query/ # QueryClient + devtools plugin
-│       │   │   └── tanstack-router/# Router config + devtools plugin
-│       │   └── routes/             # File-based routes (TanStack Router)
-│       │       ├── auth/           # /auth/login, /auth/signup, etc.
-│       │       └── _authenticated/ # Protected routes (requires login)
-│       ├── .env                    # Public env vars (committed)
-│       └── .env.development        # Local dev overrides (committed)
+│   └── web/                        # React application
+│       └── src/
+│           ├── auth/               # Auth domain (vertical slice)
+│           ├── integrations/       # Third-party service wiring
+│           └── routes/             # File-based routes
 ├── packages/
 │   ├── ui/                         # Shared shadcn/ui components
 │   └── eslint-config/              # Shared ESLint configuration
-├── supabase/                       # Supabase config, migrations, edge functions
-│   ├── config.toml                 # Supabase configuration
-│   ├── migrations/                 # SQL migrations
-│   ├── functions/                  # Edge functions (Deno runtime)
-│   └── seed.sql                    # Seed data for local dev
-└── .github/
-    ├── actions/setup/              # Shared CI setup (composite action)
-    └── workflows/                  # CI/CD workflows
+└── supabase/                       # Config, migrations, edge functions
 ```
 
 ### Vertical Slice Architecture
 
-Feature code is organized by domain, not by technology. Each domain gets its own directory directly under `src/`:
+Feature code is organized by domain, not by technology:
 
 ```
+# Good — grouped by domain
 src/auth/
-  ├── components/     # Domain-specific UI components
-  ├── queries.ts      # TanStack Query queries
-  ├── mutations.ts    # TanStack Query mutations
-  ├── hooks.ts        # React hooks
-  └── schemas.ts      # Zod schemas
+  ├── components/
+  ├── queries.ts
+  ├── mutations.ts
+  ├── hooks.ts
+  └── schemas.ts
+
+# Bad — split by technology
+src/
+  ├── components/auth/
+  ├── hooks/useAuth.ts
+  ├── queries/auth.ts
+  └── schemas/auth.ts
 ```
 
 ## Environment Variables
 
-Environment variables are managed with [T3 Env](https://env.t3.gg/) for type-safe validation. The schema is defined in `apps/web/src/env.ts`.
+Managed with [T3 Env](https://env.t3.gg/docs/core) for type-safe validation. Schema is in `apps/web/src/env.ts`.
 
 | File | Purpose | Committed |
 |------|---------|-----------|
 | `apps/web/.env` | Public variables (host, port, Supabase URL) | Yes |
 | `apps/web/.env.development` | Local dev overrides (local Supabase credentials) | Yes |
-| `apps/web/.env.local` | Private overrides (never committed) | No |
+| `apps/web/.env.local` | Private overrides | No |
 
 To add a new env var:
 1. Add it to the schema in `src/env.ts`
@@ -134,14 +122,13 @@ To add a new env var:
 
 ## Key Patterns
 
-### Adding a New Domain
+### Adding a Domain
 
-Create a new directory under `src/` with the standard files:
+Create a new directory under `src/`:
 
 ```
 src/todos/
   ├── components/
-  │   └── todo-list.tsx
   ├── queries.ts
   ├── mutations.ts
   ├── hooks.ts
@@ -150,122 +137,108 @@ src/todos/
 
 ### Adding a Route
 
-Create a file in `src/routes/`. The TanStack Router plugin auto-generates the route tree:
+Create a file in `src/routes/`. The [TanStack Router plugin](https://tanstack.com/router/latest/docs/framework/react/guide/file-based-routing) auto-generates the route tree:
 
 - `src/routes/todos.tsx` — public route at `/todos`
 - `src/routes/_authenticated/settings.tsx` — protected route at `/settings`
 
+Any route under `src/routes/_authenticated/` is automatically protected and redirects to `/auth/login`.
+
 ### Adding a shadcn Component
 
-Run the CLI from the web app (components are installed into `packages/ui`):
+See [shadcn/ui docs](https://ui.shadcn.com/docs/components) for available components.
 
 ```bash
 cd apps/web
 pnpm dlx shadcn@latest add dialog
 ```
 
-Then import in your app code:
-
 ```tsx
 import { Dialog } from "@workspace/ui/components/dialog";
 ```
 
-### Protected Routes
-
-Any route under `src/routes/_authenticated/` is automatically protected. The auth guard redirects unauthenticated users to `/auth/login`.
-
 ### Commit Messages
 
-This project uses [conventional commits](https://www.conventionalcommits.org/) enforced by commitlint + husky. Examples:
+[Conventional commits](https://www.conventionalcommits.org/) enforced by commitlint + husky. See the [cheat sheet](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13) for all types.
 
 ```
 feat: add user profile page
 fix: resolve login redirect loop
 chore: update dependencies
-refactor: extract auth hooks
 ```
 
 ## Supabase
 
+See the [Supabase local development docs](https://supabase.com/docs/guides/local-development) for more details.
+
 ### Local Development
 
 ```bash
-# Start local Supabase (requires Docker)
-pnpm db:start
+pnpm db:start          # Start local Supabase (requires Docker)
+pnpm db:reset          # Reset database (runs migrations + seed)
+pnpm db:gen-types      # Generate TypeScript types
 
 # Create a migration
-cd supabase
-npx supabase migration new my_migration
-
-# Reset database (runs migrations + seed)
-pnpm db:reset
-
-# Generate TypeScript types
-pnpm db:gen-types
+cd supabase && npx supabase migration new my_migration
 ```
 
-Email confirmation is disabled locally for convenience. Emails can be viewed in the Inbucket UI at `http://localhost:54324`.
+Email confirmation is disabled locally. Emails can be viewed at `http://localhost:54324`.
 
 ### Edge Functions
 
-Edge functions live in `supabase/functions/` and run on the Deno runtime. They have their own tooling separate from the Node.js workspace.
+Edge functions live in `supabase/functions/` and run on the [Deno runtime](https://supabase.com/docs/guides/functions), separate from the Node.js workspace.
 
 ## CI/CD
 
 ### Pull Request Checks
 
-The following checks run in parallel on every PR:
+Run in parallel on every PR:
 
-| Workflow | File | Description |
-|----------|------|-------------|
-| **Typecheck** | `typecheck.yml` | TypeScript type checking |
-| **Lint** | `lint.yml` | ESLint |
-| **Format** | `format.yml` | Prettier formatting check |
-| **Build** | `build.yml` | Production build |
-| **Commitlint** | `commitlint.yml` | Validates all PR commit messages |
-| **Generate Types** | `generate-types.yml` | Checks Supabase types haven't drifted (only runs when `supabase/` or types file changes) |
+| Workflow | Description |
+|----------|-------------|
+| **Typecheck** | TypeScript type checking |
+| **Lint** | ESLint |
+| **Format** | Prettier formatting check |
+| **Build** | Production build |
+| **Commitlint** | Validates commit messages |
+| **Generate Types** | Checks Supabase types haven't drifted (only on `supabase/` changes) |
 
-All workflows use a shared composite action (`.github/actions/setup/`) for pnpm + Node setup.
+### Supabase Deployment
 
-### Deployment
-
-Supabase deploys automatically on push to `main` or `develop` via `deploy-supabase.yml`. It pushes config, database migrations, and edge functions.
-
-The workflow uses **GitHub Environments** for environment-specific secrets:
+Deploys automatically on push to `main` or `develop` via `deploy-supabase.yml` (config, migrations, edge functions). Uses [GitHub Environments](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment) for per-environment secrets.
 
 #### Setting Up GitHub Environments
 
-1. Go to your repo's **Settings > Environments**
-2. Create two environments: `production` and `staging`
-3. For each environment, add:
+1. Go to **Settings > Environments**, create `production` and `staging`
+2. For each environment, add:
 
 | Type | Name | Description |
 |------|------|-------------|
 | Variable | `SUPABASE_PROJECT_REF` | Your Supabase project reference ID |
 | Secret | `SUPABASE_ACCESS_TOKEN` | From [supabase.com/dashboard/account/tokens](https://supabase.com/dashboard/account/tokens) |
 
-4. (Optional) Add secrets for any `env()` references in `supabase/config.toml`:
+3. Add secrets for any `env()` references in `supabase/config.toml`. These correspond to features you enable in the config — common examples:
 
-| Secret | Used by |
+| Secret | Feature |
 |--------|---------|
-| `SMTP_PASSWORD` | Email SMTP |
-| `SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID` | Google OAuth |
-| `SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET` | Google OAuth |
-| `TURNSTILE_SECRET` | Captcha |
+| `SMTP_PASSWORD` | Email delivery ([auth.email.smtp]) |
+| `SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID` | Google OAuth ([auth.external.google]) |
+| `SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET` | Google OAuth ([auth.external.google]) |
+| `TURNSTILE_SECRET` | Captcha ([auth.captcha]) |
 
-5. (Recommended) Add **required reviewers** on the `production` environment to gate production deploys.
+4. (Recommended) Add **required reviewers** on `production` to gate deploys
 
 #### Branch to Environment Mapping
 
-| Branch | Environment | Supabase Remote |
-|--------|-------------|-----------------|
-| `main` | `production` | `[remotes.production]` in `config.toml` |
-| `develop` / `development` | `staging` | `[remotes.staging]` in `config.toml` |
+| Branch | Environment |
+|--------|-------------|
+| `main` | `production` |
+| `develop` / `development` | `staging` |
 
 ### Frontend Deployment
 
 Deploy `apps/web` to your platform of choice:
 
-- **Vercel** — auto-detects Vite, set root directory to `apps/web`
-- **Netlify** — set build command to `pnpm build` and publish directory to `apps/web/dist`
-- **Cloudflare Pages** — set build command to `pnpm build` and output directory to `apps/web/dist`
+- **Vercel** — set root directory to `apps/web`
+- **Netlify** — build: `pnpm build`, publish: `apps/web/dist`
+- **Cloudflare Pages** — build: `pnpm build`, output: `apps/web/dist`
