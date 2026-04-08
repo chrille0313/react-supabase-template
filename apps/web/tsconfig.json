@@ -4,6 +4,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
+      "@workspace/supabase/*": ["../../packages/supabase/src/*"],
       "@workspace/ui/*": ["../../packages/ui/src/*"]
     }
   }

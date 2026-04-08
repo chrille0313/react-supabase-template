@@ -1,0 +1,22 @@
+{
+  "name": "@workspace/supabase",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./client": "./src/client.ts",
+    "./types": "./src/types.gen.ts"
+  },
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.102.1"
+  },
+  "devDependencies": {
+    "@workspace/lint-config": "workspace:*",
+    "typescript": "^6.0.2"
+  }
+}

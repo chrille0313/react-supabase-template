@@ -14,7 +14,7 @@
     "db:start": "supabase start",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
-    "db:gen-types": "supabase gen types typescript --local > apps/web/src/integrations/supabase/types.gen.ts",
+    "db:gen-types": "supabase gen types typescript --local > packages/supabase/src/types.gen.ts",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -25,7 +25,7 @@
     "oxfmt": "^0.44.0",
     "oxlint": "^1.59.0",
     "oxlint-tsgolint": "^0.20.0",
-    "turbo": "^2.9.3"
+    "turbo": "^2.9.5"
   },
   "engines": {
     "node": ">=24",
