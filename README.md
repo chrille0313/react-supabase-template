@@ -210,7 +210,7 @@ Run in parallel on every PR:
 | Workflow           | Description                                                         |
 | ------------------ | ------------------------------------------------------------------- |
 | **Typecheck**      | TypeScript type checking                                            |
-| **Lint**           | oxlint with GitHub annotations                                     |
+| **Lint**           | oxlint with GitHub annotations                                      |
 | **Format**         | oxfmt formatting check                                              |
 | **Build**          | Production build                                                    |
 | **Commitlint**     | Validates commit messages                                           |

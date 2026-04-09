@@ -1,9 +1,10 @@
-import { z } from 'zod';
-import type { AuthContext } from '../../_shared/auth.ts';
-import { json } from '../../_shared/http.ts';
+import { z } from "zod";
+
+import type { AuthContext } from "../../_shared/auth.ts";
+import { json } from "../../_shared/http.ts";
 
 const createGreetingSchema = z.object({
-  name: z.string().min(1).max(100)
+  name: z.string().min(1).max(100),
 });
 
 export async function createGreeting(ctx: AuthContext, req: Request) {
