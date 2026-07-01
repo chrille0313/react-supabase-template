@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.102.1"
+    "@supabase/supabase-js": "^2.110.0"
   },
   "devDependencies": {
     "@workspace/lint-config": "workspace:*",
