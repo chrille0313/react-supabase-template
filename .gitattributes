@@ -1,0 +1,31 @@
+# Normalize line endings: store LF in the repo, check out LF on every OS.
+# Overrides any local core.autocrlf, so Windows stops rewriting to CRLF.
+* text=auto eol=lf
+
+# Scripts must be LF or they break when executed on Unix / in containers.
+*.sh        text eol=lf
+*.bash      text eol=lf
+.husky/*    text eol=lf
+
+# Windows-only scripts stay CRLF.
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+
+# Binary assets: never touch line endings, never diff as text.
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.webp      binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.otf       binary
+*.eot       binary
+*.pdf       binary
+*.zip       binary
+*.gz        binary
+*.mp4       binary
+*.webm      binary
+*.wasm      binary
