@@ -153,8 +153,8 @@ importers:
   packages/supabase:
     dependencies:
       '@supabase/supabase-js':
-        specifier: ^2.110.0
-        version: 2.110.0
+        specifier: ^2.110.5
+        version: 2.110.5
     devDependencies:
       '@workspace/lint-config':
         specifier: workspace:*
@@ -2119,31 +2119,31 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@supabase/auth-js@2.110.0':
-    resolution: {integrity: sha512-Mi288WCTp6wxMFCOu/UgzgHEXODjdl2uVTLqK11eanzGZaldU3RyP8Am+ZbNuVzFP+5+iOvppxzv7N5Ym84xTg==}
+  '@supabase/auth-js@2.110.5':
+    resolution: {integrity: sha512-QSlI5CNeEefHP95/GbeMhNgr8aHEHiXFh8c1IWthYyI9ZzBwEigYzJFCw4Ff+GkL8OK9tArBmGGv6rpg5zLXSw==}
     engines: {node: '>=22.0.0'}
 
-  '@supabase/functions-js@2.110.0':
-    resolution: {integrity: sha512-Fde5wlY8ZZy+9yqrWlQHo8MacSyUBArBEtN2boB4thJQigPnQD/cc61qZN0n3I1L0gwhWtHYwIMnOBKxSvF6Hw==}
+  '@supabase/functions-js@2.110.5':
+    resolution: {integrity: sha512-nuQuoIoEGT8ukrwr6THlY5v50bSMJ2rqti1FFsGyDaC98POLmcFQVFFh23PVPhRsKWUxrFc0MpmEoHKa7CY4mg==}
     engines: {node: '>=22.0.0'}
 
   '@supabase/phoenix@0.4.4':
     resolution: {integrity: sha512-Gt0pqoXuIqX/8dvG0OKp/wMCobXNH3klNbUPBNyOfN0YA1IswrM3HyWFMOPk1Jy+BRaIyDPcFx4jLBwHNmlyfQ==}
 
-  '@supabase/postgrest-js@2.110.0':
-    resolution: {integrity: sha512-ZbC1QZL3jcvBUfVKjJbgRM27G4Mg3Zzqdm44m5pJafe1e52Cli793EOnwQucomBAGEUDd03Nzaf7XV3ji/XexQ==}
+  '@supabase/postgrest-js@2.110.5':
+    resolution: {integrity: sha512-eObfgBjxLPzFakwMpUmsv8nuNPOhoDhzzN8cwvEvGkxkmuRIZcOCYH9+DRbpKnxh7tgsBZW+KWtaZI2j98b2/g==}
     engines: {node: '>=22.0.0'}
 
-  '@supabase/realtime-js@2.110.0':
-    resolution: {integrity: sha512-Wn2AWpneZuDFTkp/65tqctvoh+3JvyTjMam8sTMqVWy5BgkU8zAvFwilPYPPPhkINeKF8NAJKP7FclJ2iGCUMw==}
+  '@supabase/realtime-js@2.110.5':
+    resolution: {integrity: sha512-VtOZxw5jfrc37KgIfFdp9SOFJjtvJ0qU+gT8CPQjL7cqy4DJlaTXacw5aBBogLZksqAI0YN67qhlDaMKFwfOuw==}
     engines: {node: '>=22.0.0'}
 
-  '@supabase/storage-js@2.110.0':
-    resolution: {integrity: sha512-71+gU3HrhiylAhftY6FmO5PPdcsScnVcS766CVD+vTYK9qTDLbrx8FhgBYbqGm3iV/wkTfzrNJfjGsMeFRkJRQ==}
+  '@supabase/storage-js@2.110.5':
+    resolution: {integrity: sha512-7GkOZlrYknVGVPyijoDbu5OXGvQ2oQ6dkU0juAkIMPZ9QgtmJ8IPrxe76zGSbmzbaC1GdKw7pqeXEi2HT67sbA==}
     engines: {node: '>=22.0.0'}
 
-  '@supabase/supabase-js@2.110.0':
-    resolution: {integrity: sha512-8yI84VJiEVW4zxZpLUmxXmjzQ7O2St9X/ymzlBETDHTURPWG3LmvbSiibq+7dqAJmyoUfxZnSfXeM4HCM8s4XQ==}
+  '@supabase/supabase-js@2.110.5':
+    resolution: {integrity: sha512-cAO1Nm+CCogRNVXN93bBkh0vjOdLM5e6J9gB/cHV9Lqni/gEmN2HJFrnn4NI33GYIfmlh4Wbm6siH+XXRgpexA==}
     engines: {node: '>=22.0.0'}
 
   '@t3-oss/env-core@0.13.11':
@@ -4008,8 +4008,18 @@ packages:
     peerDependencies:
       seroval: ^1.0
 
+  seroval-plugins@1.5.5:
+    resolution: {integrity: sha512-+BDhqYM6CEn3x09v44dpa9p6974FuUB2dxk+Ctn04k0cO1Zt6QODTXfmEZK0eBaTe/fJBvP4NMGuNJ+R8T+QMg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      seroval: ^1.0
+
   seroval@1.5.4:
     resolution: {integrity: sha512-46uFvgrXTVxZcUorgSSRZ4y+ieqLLQRMlG4bnCZKW3qI6BZm7Rg4ntMW4p1mILEEBZWrFlcpp0AyIIlM6jD9iw==}
+    engines: {node: '>=10'}
+
+  seroval@1.5.5:
+    resolution: {integrity: sha512-bSjOuPcwPKLSJNhr9+bZxA20nQxVle5J5MNsYRVE6cIg7KpRLXGupymePavu0jrxlPiPsr4xGZSB8yUY2sH2sw==}
     engines: {node: '>=10'}
 
   serve-static@2.2.1:
@@ -4180,15 +4190,15 @@ packages:
   tldts-core@7.0.27:
     resolution: {integrity: sha512-YQ7uPjgWUibIK6DW5lrKujGwUKhLevU4hcGbP5O6TcIUb+oTjJYJVWPS4nZsIHrEEEG6myk/oqAJUEQmpZrHsg==}
 
-  tldts-core@7.4.7:
-    resolution: {integrity: sha512-rNlAI8fKn/JckBMUSbNL/ES2kmDiurWaE49l+ikwEc9A6lFR7gMx9AhgQMQKBK4H5w4pKLH64JzZfB99uRsGNQ==}
+  tldts-core@7.4.8:
+    resolution: {integrity: sha512-c1P7u0EhACHj7lPy4MJm8iTFEU8+nB0LCtddH0fhP7noaVoXAqafMtOOeX+ulpuPBqnrRgRhw494RICT3mbhnw==}
 
   tldts@7.0.27:
     resolution: {integrity: sha512-I4FZcVFcqCRuT0ph6dCDpPuO4Xgzvh+spkcTr1gK7peIvxWauoloVO0vuy1FQnijT63ss6AsHB6+OIM4aXHbPg==}
     hasBin: true
 
-  tldts@7.4.7:
-    resolution: {integrity: sha512-56L0/9HELHSsG1bFCzay8UoLxzRL7kpFf7Wl5q/kSYwiSJGACvro61xnKzPNM+SadxllzdtXsKDSXE7HPeqIAw==}
+  tldts@7.4.8:
+    resolution: {integrity: sha512-htwgN/8KRB3z3vnC0BOETVh2m499g5GmyTK9Wq5JBLX3FNz6tSBveAd+fQhzy9hkjif8vy2jwDMR1sGhLtZl2A==}
     hasBin: true
 
   to-regex-range@5.0.1:
@@ -6290,37 +6300,37 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@supabase/auth-js@2.110.0':
+  '@supabase/auth-js@2.110.5':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/functions-js@2.110.0':
+  '@supabase/functions-js@2.110.5':
     dependencies:
       tslib: 2.8.1
 
   '@supabase/phoenix@0.4.4': {}
 
-  '@supabase/postgrest-js@2.110.0':
+  '@supabase/postgrest-js@2.110.5':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/realtime-js@2.110.0':
+  '@supabase/realtime-js@2.110.5':
     dependencies:
       '@supabase/phoenix': 0.4.4
       tslib: 2.8.1
 
-  '@supabase/storage-js@2.110.0':
+  '@supabase/storage-js@2.110.5':
     dependencies:
       iceberg-js: 0.8.1
       tslib: 2.8.1
 
-  '@supabase/supabase-js@2.110.0':
+  '@supabase/supabase-js@2.110.5':
     dependencies:
-      '@supabase/auth-js': 2.110.0
-      '@supabase/functions-js': 2.110.0
-      '@supabase/postgrest-js': 2.110.0
-      '@supabase/realtime-js': 2.110.0
-      '@supabase/storage-js': 2.110.0
+      '@supabase/auth-js': 2.110.5
+      '@supabase/functions-js': 2.110.5
+      '@supabase/postgrest-js': 2.110.5
+      '@supabase/realtime-js': 2.110.5
+      '@supabase/storage-js': 2.110.5
 
   '@t3-oss/env-core@0.13.11(typescript@6.0.2)(zod@4.3.6)':
     optionalDependencies:
@@ -8151,7 +8161,13 @@ snapshots:
     dependencies:
       seroval: 1.5.4
 
+  seroval-plugins@1.5.5(seroval@1.5.5):
+    dependencies:
+      seroval: 1.5.5
+
   seroval@1.5.4: {}
+
+  seroval@1.5.5: {}
 
   serve-static@2.2.1:
     dependencies:
@@ -8249,8 +8265,8 @@ snapshots:
   solid-js@1.9.12:
     dependencies:
       csstype: 3.2.3
-      seroval: 1.5.4
-      seroval-plugins: 1.5.4(seroval@1.5.4)
+      seroval: 1.5.5
+      seroval-plugins: 1.5.5(seroval@1.5.5)
 
   source-map-js@1.2.1: {}
 
@@ -8337,16 +8353,16 @@ snapshots:
 
   tldts-core@7.0.27: {}
 
-  tldts-core@7.4.7:
+  tldts-core@7.4.8:
     optional: true
 
   tldts@7.0.27:
     dependencies:
       tldts-core: 7.0.27
 
-  tldts@7.4.7:
+  tldts@7.4.8:
     dependencies:
-      tldts-core: 7.4.7
+      tldts-core: 7.4.8
     optional: true
 
   to-regex-range@5.0.1:
@@ -8361,7 +8377,7 @@ snapshots:
 
   tough-cookie@6.0.2:
     dependencies:
-      tldts: 7.4.7
+      tldts: 7.4.8
     optional: true
 
   tr46@6.0.0:
