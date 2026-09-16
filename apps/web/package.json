@@ -28,7 +28,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^1.33.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
+    "react-dom": "^19.3.0",
     "react-resizable-panels": "^4.11.2",
     "zod": "^4.3.6"
   },
@@ -44,7 +44,7 @@
     "@testing-library/user-event": "^14.6.6",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.0",
     "@workspace/lint-config": "workspace:*",
     "jsdom": "^30.0.1",
